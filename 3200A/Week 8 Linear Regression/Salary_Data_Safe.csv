@@ -1,0 +1,50 @@
+Salary,DEPARTMENT,UIUC_Gender,Tenure_Rank,Years_in_Rank,Degree Year,Assoc,Full,CalledM,YearsSincePHD,DeptB,DeptC,DeptD
+107859.0,A,F,Associate Professor,3.6,,1,0,0,16,0,0,0
+115482.0,A,M,Associate Professor,3.6,,1,0,1,18,0,0,0
+103052.0,A,M,Associate Professor,1.6,,1,0,1,15,0,0,0
+84283.0,A,M,Assistant Professor,2.35,,0,0,1,7,0,0,0
+119684.0,A,M,Professor,5.6,,0,1,1,24,0,0,0
+123688.0,A,M,Professor,1.6,,0,1,1,21,0,0,0
+120241.0,A,M,Professor,6.6,,0,1,1,28,0,0,0
+172303.0,A,M,Professor,10.6,,0,1,1,29,0,0,0
+159235.0,A,M,Professor,40.59,,0,1,1,51,0,0,0
+159407.0,A,M,Professor,9.6,,0,1,1,34,0,0,0
+89615.0,B,M,Associate Professor,23.58,,1,0,1,35,1,0,0
+108738.0,B,F,Associate Professor,4.6,,1,0,0,20,1,0,0
+106316.0,B,F,Associate Professor,3.72,,1,0,0,22,1,0,0
+89923.0,B,F,Assistant Professor,8.39,,0,0,0,17,1,0,0
+82941.0,B,M,Assistant Professor,1.38,,0,0,1,9,1,0,0
+204281.0,B,M,Professor,23.58,,0,1,1,40,1,0,0
+121342.0,B,M,Professor,1.6,,0,1,1,24,1,0,0
+110460.0,B,F,Professor,2.6,,0,1,0,29,1,0,0
+160560.0,B,F,Professor,12.6,,0,1,0,30,1,0,0
+124114.0,B,M,Professor,2.6,,0,1,1,23,1,0,0
+136616.0,B,F,Professor,3.6,,0,1,0,22,1,0,0
+140038.0,B,F,Professor,27.58,,0,1,0,42,1,0,0
+106009.0,C,M,Associate Professor,1.6,,1,0,1,13,0,1,1
+105347.0,C,M,Associate Professor,2.6,,1,0,1,15,0,1,1
+85996.0,C,F,Assistant Professor,2.6,,0,0,0,16,0,1,1
+87700.0,C,M,Assistant Professor,4.39,,0,0,1,15,0,1,1
+90889.0,C,F,Assistant Professor,2.6,,0,0,0,14,0,1,1
+138443.0,C,M,Professor,12.6,,0,1,1,34,0,1,1
+179848.0,C,M,Professor,19.6,,0,1,1,36,0,1,1
+128776.0,C,M,Professor,9.6,,0,1,1,38,0,1,1
+201474.0,C,M,Professor,16.6,,0,1,1,32,0,1,1
+115652.0,C,M,Professor,21.58,,0,1,1,40,0,1,1
+153737.0,C,M,Professor,14.6,,0,1,1,33,0,1,1
+151420.0,C,F,Professor,4.6,,0,1,0,20,0,1,1
+144395.0,C,F,Professor,4.6,,0,1,0,19,0,1,1
+138638.0,C,F,Professor,8.6,,0,1,0,34,0,1,1
+117372.0,D,F,Associate Professor,3.6,,1,0,0,18,0,0,0
+100401.0,D,M,Associate Professor,5.6,,1,0,1,20,0,0,0
+94641.0,D,F,Associate Professor,1.6,,1,0,0,15,0,0,0
+106176.0,D,F,Associate Professor,5.6,,1,0,0,21,0,0,0
+135940.0,D,M,Associate Professor,5.6,,1,0,1,23,0,0,0
+104148.0,D,M,Associate Professor,2.6,,1,0,1,15,0,0,0
+112099.0,D,F,Associate Professor,10.6,,1,0,0,23,0,0,0
+96682.0,D,M,Associate Professor,2.6,,1,0,1,14,0,0,0
+85458.0,D,M,Assistant Professor,2.34,,0,0,1,10,0,0,0
+85263.0,D,M,Assistant Professor,1.39,,0,0,1,8,0,0,0
+80184.0,D,F,Assistant Professor,2.38,,0,0,0,11,0,0,0
+206262.0,D,M,Professor,17.6,,0,1,1,39,0,0,0
+142336.0,D,M,Professor,9.6,,0,1,1,27,0,0,0
