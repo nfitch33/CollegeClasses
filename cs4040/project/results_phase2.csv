@@ -1,0 +1,22 @@
+n,Algorithm,k,Median Time (ms)
+10,Insertion Sort,-,0.004
+100,Insertion Sort,-,0.233
+1000,Insertion Sort,-,33.62
+2000,Insertion Sort,-,123.009
+5000,Insertion Sort,-,719.576
+10000,Insertion Sort,-,2938.661
+20000,Insertion Sort,-,11499.804
+10,Quicksort,-,0.015
+100,Quicksort,-,0.121
+1000,Quicksort,-,1.475
+2000,Quicksort,-,4.037
+5000,Quicksort,-,11.877
+10000,Quicksort,-,25.889
+20000,Quicksort,-,44.042
+10,Counting Sort,10,0.004
+100,Counting Sort,100,0.021
+1000,Counting Sort,1000,0.266
+2000,Counting Sort,2000,0.558
+5000,Counting Sort,5000,1.559
+10000,Counting Sort,10000,2.496
+20000,Counting Sort,20000,5.775

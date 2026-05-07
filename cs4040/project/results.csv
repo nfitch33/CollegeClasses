@@ -1,0 +1,15 @@
+n,Algorithm,Median Time (ms)
+10,Insertion Sort,0.006
+100,Insertion Sort,0.344
+1000,Insertion Sort,33.66
+2000,Insertion Sort,128.081
+5000,Insertion Sort,812.865
+10000,Insertion Sort,3228.866
+20000,Insertion Sort,12396.723
+10,Quicksort,0.016
+100,Quicksort,0.119
+1000,Quicksort,1.879
+2000,Quicksort,4.549
+5000,Quicksort,9.842
+10000,Quicksort,25.548
+20000,Quicksort,46.889
