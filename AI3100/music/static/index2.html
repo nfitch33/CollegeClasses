@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MusicGen Melody + Lyrics Generator</title>
+</head>
+<body>
+    <h1>🎵 MusicGen Melody + Lyrics Generator</h1>
+
+    <form id="musicForm" enctype="multipart/form-data">
+        <label for="prompt">Prompt:</label><br>
+        <input type="text" id="prompt" name="prompt" placeholder="Describe your music..." size="60"><br><br>
+
+        <label for="duration">Duration (seconds):</label><br>
+        <input type="number" id="duration" name="duration" value="10" min="1" max="60"><br><br>
+
+        <label for="style">Style:</label><br>
+        <select id="style" name="style">
+            <option value="pop">Pop</option>
+            <option value="hiphop">HipHop</option>
+            <option value="jazz">Jazz</option>
+        </select><br><br>
+
+        <label for="melodies">Optional Melody (.wav, multiple allowed):</label><br>
+        <input type="file" id="melodies" name="melodies" accept=".wav" multiple><br><br>
+
+        <label for="dali">Optional DALI Lyrics JSON:</label><br>
+        <input type="file" id="dali" name="dali_annotation_path" accept=".json"><br><br>
+
+        <button type="submit">Generate Music</button>
+    </form>
+
+    <h2>Output</h2>
+    <audio id="audioPlayer" controls></audio>
+
+    <script>
+        const form = document.getElementById("musicForm");
+        const audioPlayer = document.getElementById("audioPlayer");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch("/generate", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    alert("Error generating music!");
+                    return;
+                }
+
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                audioPlayer.src = url;
+                audioPlayer.play();
+            } catch (err) {
+                console.error(err);
+                alert("An error occurred while generating music.");
+            }
+        });
+    </script>
+</body>
+</html>

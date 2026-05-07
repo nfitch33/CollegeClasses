@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Music Generator 🎶</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    input, button { font-size: 1rem; padding: 10px; }
+    audio { margin-top: 20px; display: block; width: 80%; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+  <h1>AI Music Generator 🎵</h1>
+  <p>Type a music description and generate a short AI song!</p>
+
+  <input type="text" id="prompt" placeholder="e.g. upbeat jazz with trumpet" size="40">
+  <button onclick="generate()">Generate</button>
+
+  <audio id="player" controls></audio>
+
+  <script>
+    async function generate() {
+      const prompt = document.getElementById('prompt').value;
+      const btn = document.querySelector('button');
+      btn.disabled = true; btn.textContent = "Generating...";
+      
+      const response = await fetch("/generate", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({prompt, duration: 12})
+      });
+
+      const blob = await response.blob();
+      document.getElementById('player').src = URL.createObjectURL(blob);
+
+      btn.disabled = false; btn.textContent = "Generate";
+    }
+  </script>
+</body>
+</html>

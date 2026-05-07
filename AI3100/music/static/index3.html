@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MusicGen Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1e1e1e;
+            color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        h1 {
+            color: #ffcc00;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 400px;
+        }
+        input, textarea, select, button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            background-color: #ffcc00;
+            color: #1e1e1e;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #e6b800;
+        }
+        audio {
+            margin-top: 20px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎵 MusicGen Generator</h1>
+    <form id="musicForm">
+        <label for="prompt">Prompt / Description:</label>
+        <textarea id="prompt" name="prompt" rows="3" placeholder="Describe the music you want..."></textarea>
+
+        <label for="duration">Duration (seconds):</label>
+        <input type="number" id="duration" name="duration" value="10" min="1" max="60">
+
+        <label for="dali">Optional DALI lyrics JSON path:</label>
+        <input type="text" id="dali" name="dali_annotation_path" placeholder="e.g., /path/to/lyrics.json">
+
+        <button type="submit">Generate Music</button>
+    </form>
+
+    <audio id="player" controls hidden></audio>
+
+    <script>
+        const form = document.getElementById("musicForm");
+        const player = document.getElementById("player");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch("/generate", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error("Failed to generate music");
+
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                player.src = url;
+                player.hidden = false;
+                player.play();
+            } catch (err) {
+                alert(err.message);
+            }
+        });
+    </script>
+</body>
+</html>
