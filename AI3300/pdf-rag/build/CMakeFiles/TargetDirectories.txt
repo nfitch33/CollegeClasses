@@ -1,0 +1,3 @@
+/home/natetheskate/.vscode-server/AI3300/pdf-rag/build/CMakeFiles/pdf_rag.dir
+/home/natetheskate/.vscode-server/AI3300/pdf-rag/build/CMakeFiles/edit_cache.dir
+/home/natetheskate/.vscode-server/AI3300/pdf-rag/build/CMakeFiles/rebuild_cache.dir
