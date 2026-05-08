@@ -1,0 +1,31 @@
+test.00 rear_insert and show
+test.01 front_insert
+test.02 front_remove
+test.03 rear_remove
+test.04 rear_remove w/ 1 element in list
+test.05 front_remove w/ 1 element in list
+test.06 rear_remove w/ 0 elements in list
+test.07 front_remove w/ 0 elements in list
+test.08 reverse_show
+test.09 size
+test.10 size w/ 0 elements in list
+test.11 list.begin
+test.12 iterator declaration, iter dereference
+test.13 ++iterator
+test.14 list.r_begin
+test.15 --iterator
+test.16 traverse forward with iterator begin, end
+test.17 traverse backward with iterator r_begin, r_end
+test.18 move iterator and insert_before
+test.19 insert_before w/ 1 element in list
+test.20 move iterator and insert_after
+test.21 insert_after w/ 1 element in list
+test.22 move iterator and remove
+test.23 remove first element
+test.24 remove last element
+test.25 remove w/ 1 element in list
+test.26 remove w/ 0 elements in list
+test.27 copy constructor
+test.28 copy constructor w/ destructor
+test.29 copy assignment
+test.30 copy assignment w/ destructor

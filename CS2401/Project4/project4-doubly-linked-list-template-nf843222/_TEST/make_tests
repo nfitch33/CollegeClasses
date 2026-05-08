@@ -1,0 +1,520 @@
+#!/bin/bash
+cd _TEST
+
+i=0
+echo "test.$(printf "%02d" $i) rear_insert and show" > test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) front_insert" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.front_insert(i);
+	}
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) front_remove" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	list.front_remove();
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) rear_remove" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	list.rear_remove();
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) rear_remove w/ 1 element in list" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+	list.rear_insert(16);
+	list.rear_remove();
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) front_remove w/ 1 element in list" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+	list.rear_insert(16);
+	list.front_remove();
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) rear_remove w/ 0 elements in list" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+	list.rear_remove();
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) front_remove w/ 0 elements in list" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+	list.front_remove();
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) reverse_show" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	list.reverse_show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) size" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	cout << list.size() << endl;
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) size w/ 0 elements in list" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+	cout << list.size() << endl;
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) list.begin" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+
+	dlist<int>::iterator it = list.begin();
+	cout << *it << endl;
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) iterator declaration, iter dereference" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+
+	dlist<int>::iterator it = list.begin();
+	cout << *it << endl;
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) ++iterator" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+
+	dlist<int>::iterator it = list.begin();
+	++it;
+	cout << *it << endl;
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) list.r_begin" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+
+	dlist<int>::iterator it = list.r_begin();
+	cout << *it << endl;
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) --iterator" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+
+	dlist<int>::iterator it = list.r_begin();
+	--it;
+	cout << *it << endl;
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) traverse forward with iterator begin, end" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+	dlist<int>::iterator it;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+
+	for(it = list.begin(); it != list.end(); ++it) {
+		cout << *it << endl;
+	}
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) traverse backward with iterator r_begin, r_end" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+	dlist<int>::iterator it;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+
+	for(it = list.r_begin(); it != list.r_end(); --it) {
+		cout << *it << endl;
+	}
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) move iterator and insert_before" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	dlist<int>::iterator it = list.begin();
+	it++;
+	it++;
+	it++;
+	list.insert_before(it, 11);
+	list.insert_before(it, 12);
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) insert_before w/ 1 element in list" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	list.rear_insert(8);
+	dlist<int>::iterator it = list.begin();
+	list.insert_before(it, 11);
+	list.insert_before(it, 12);
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) move iterator and insert_after" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	dlist<int>::iterator it = list.begin();
+	it++;
+	it++;
+	it++;
+	list.insert_after(it, 11);
+	list.insert_after(it, 12);
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) insert_after w/ 1 element in list" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	list.rear_insert(8);
+	dlist<int>::iterator it = list.begin();
+	list.insert_after(it, 11);
+	list.insert_after(it, 12);
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) move iterator and remove" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	dlist<int>::iterator it = list.begin();
+	it++;
+	it++;
+	it++;
+	list.remove(it);
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) remove first element" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	dlist<int>::iterator it = list.begin();
+	list.remove(it);
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) remove last element" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	dlist<int>::iterator it = list.r_begin();
+	list.remove(it);
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) remove w/ 1 element in list" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	list.rear_insert(8);
+	dlist<int>::iterator it = list.begin();
+	list.remove(it);
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) remove w/ 0 elements in list" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	dlist<int>::iterator it = list.begin();
+	list.remove(it);
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) copy constructor" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	
+	dlist<int> copy(list);
+
+	copy.show();
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) copy constructor w/ destructor" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+{	
+	dlist<int> copy(list);
+
+	cout << "copy exists, copy list:" << endl;
+	copy.show();
+}
+	cout << "copy destroyed, original list:" << endl;
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) copy assignment" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+	
+	dlist<int> copy = list;
+
+	copy.show();
+	list.show();
+	cout << endl;
+}
+END
+
+let "i += 1"
+echo "test.$(printf "%02d" $i) copy assignment w/ destructor" >> test_list.txt
+cat bits/header.txt > TEST_CC/test.$(printf "%02d" $i).cc
+cat >> TEST_CC/test.$(printf "%02d" $i).cc << 'END'
+int main() {
+	dlist<int> list;
+
+	for(int i = 0; i < 10; ++i) {
+		list.rear_insert(i);
+	}
+{	
+	dlist<int> copy = list;
+
+	cout << "copy exists, copy list:" << endl;
+	copy.show();
+	cout << endl;
+}
+	cout << "copy destroyed, original list:" << endl;
+	list.show();
+	cout << endl;
+}
+END

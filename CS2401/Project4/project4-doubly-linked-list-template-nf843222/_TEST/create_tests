@@ -1,0 +1,33 @@
+#!/bin/bash
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+ret=0
+
+./_TEST/make_tests
+echo "-----------------------------------"
+for TEST in _TEST/TEST_CC/test.*.cc; do
+        CC="${TEST:14}";
+        EX="${CC%.cc}";
+        g++ -std=c++11 -Wall $TEST -I. -o _TEST/TEST_CASES/$EX;
+        ./_TEST/TEST_CASES/$EX > _TEST/OUTPUT/${EX}.myoutput;
+        CORR="_TEST/OUTPUT/${EX}.correct";
+        MY="_TEST/OUTPUT/${EX}.myoutput";
+        cat _TEST/test_list.txt | grep $EX;
+        if cmp -s $CORR $MY; then
+            echo -e "$EX ${GREEN}PASSES${NC}";
+        else
+			ret=1;
+            echo -e "$EX ${RED}FAILS${NC}";
+            echo '==== output differences: < means the CORRECT output, > means YOUR output';
+            diff $CORR $MY;
+        fi;
+        echo "-----------------------------------";
+done
+if [ $ret -eq 0 ]; 
+then 
+	echo -e "All tests ${GREEN}PASSED${NC}!"; 
+else 
+	echo -e "Some tests ${RED}FAILED${NC}.";
+fi
+exit $ret
