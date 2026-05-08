@@ -1,0 +1,20 @@
+#!/bin/bash
+
+rm -f tokens.txt
+
+for f in "$1"/*
+do
+  fname=$(basename "$f")
+  echo "Tokenizing $fname..."
+
+  ./scanner < "$f"
+
+  echo -n "$fname " >> tokens.txt
+  cat scanner_out.txt >> tokens.txt
+  echo "" >> tokens.txt
+done
+
+echo "Detecting Plagiarism..."
+./cmos > PlagarismReport.txt
+
+echo "Done. Results in PlagarismReport.txt"
