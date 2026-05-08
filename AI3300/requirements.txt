@@ -1,5 +1,0 @@
-pdfplumber
-sentence-transformers
-numpy
-scikit-learn
-ollama
