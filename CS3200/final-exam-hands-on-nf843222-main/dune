@@ -1,0 +1,19 @@
+(executable
+  (name count_depth)
+  (modules count_depth)
+  (libraries ounit2 sexplib))
+
+(executable
+  (name recursive_function)
+  (modules recursive_function)
+  (libraries ounit2 num))
+
+(executable
+  (name product_of_multiples_of_4)
+  (modules product_of_multiples_of_4)
+  (libraries ounit2))
+
+(executable
+  (name parser_extension)
+  (modules parser_extension)
+  (libraries ounit2 sexplib))
