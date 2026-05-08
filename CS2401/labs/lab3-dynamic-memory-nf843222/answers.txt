@@ -1,0 +1,57 @@
+/**
+ * @brief Use this file to enter the answers to the questions listed in README.md
+ * 
+ * @author 
+ * Nate Fitch
+ */
+
+Q1:
+    *
+    *
+    *
+    *
+    *
+    *
+
+Q2:
+    *
+    **
+    ***
+    ****
+    *****
+    ******
+
+Q3:
+    It doesn;t reset the output of the terminal
+    and it adds more to it with each repition
+
+Q4:
+    It goes back to the same as question 1 output
+
+Q5:
+    Wrote the code int var = 20; int* p = &var; then I 
+    used cout << p; this is what showed up --> 0x7ffefce2ab3c
+
+Q6:
+    Wrote the code int* p = new(int); then I 
+    used cout << p; this is what showed up --> 0x55b2143e6eb0
+
+Q7:
+    2401 is stored at: 0x55b2143e6eb0
+    2411 is stored at: 0x55b2143e6eb0
+
+Q8:
+    926103090 is stored at 0x55ab4da2ced4
+    1936269360 is stored at 0x55ab4da2ced8
+
+Q9:
+    There were 5 numbers in the output
+Q10:
+    The terminal increased in the amount of output to the full 25 amount
+    from the for loop;
+
+Q11:
+    the data at 2 was deleted and was set to 0. Along with some of the data after it
+    on multiple lines. It appears to be somewhat random with the data after it being 0;
+    I don't see the pattern to when its just the 2nd count only and when it effects data
+    after it.

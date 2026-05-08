@@ -1,0 +1,62 @@
+/**
+ * @brief Use this file to enter the answers to the questions listed in README.md
+ * 
+ * @author 
+ * 
+ */
+
+Q1:
+
+2 4 6 8 10 12 14 
+2 4 6 5 10 15 14 Total bytes allocated = 120
+
+Q2:
+
+Yes this is a problem because in the main we outputed N1 twice, when we edited N2 for the second output.
+
+Q3:
+
+N1.display was executed twice instead of once and N2 being executed once
+
+Q4:
+
+2 4 6 8 10 12 14 
+2 4 6 8 10 12 14 Total bytes allocated = 120
+
+Q5:
+
+Yes
+
+Q6:
+
+We overloaded the = operator;
+
+Q7:
+
+0x5593edd39240
+0x5593edd39570
+0x5593edd398a0
+0x5593edd39bd0
+0x5593edd39f00
+
+Q8:
+
+The two digits before the last number all go up by 33. Except the last one which goes up by 43
+
+Q9:
+
+0x558450d78240
+0x558450d78240
+0x558450d78240
+0x558450d78240
+0x558450d78240
+
+They are all the same
+
+Q10:
+
+120 bytes
+
+Q11:
+
+The deconstructor reverted the bytes back to when we set up the constructor
