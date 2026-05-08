@@ -1,0 +1,8 @@
+for i in [1:3] {
+buildnode{
+name="node_"+i;
+weight=2+i+3;
+};
+};
+
+print("node_1");

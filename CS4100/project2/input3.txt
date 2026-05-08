@@ -1,0 +1,14 @@
+for x in ["A","B","C"] {
+buildnode{
+name="root_"+x;
+weight=1;
+};
+
+buildnode{
+name="child_"+x;
+weight=2;
+isachildof="root_"+x;
+};
+};
+
+print("root_A");
