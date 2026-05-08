@@ -1,0 +1,255 @@
+
+#include <string>
+#include <fstream>
+#include <iostream>
+#include "dlist.h"
+#include "dnode.h"
+#include "node_iterator.h"
+
+
+using namespace std;
+template<class t>
+dlist<t>::~dlist(){
+    dnode<t>* cursor = head;
+    dnode<t>* tmp = cursor;
+    while(cursor != nullptr){
+        tmp = tmp -> next();
+        delete cursor;
+        cursor = tmp;
+    }
+}
+
+template<class t>
+dlist<t>& dlist<t>::operator =(const dlist<t> &other){
+    if(this == &other){
+        return this;
+    }
+    dnode<t>* cursor = other.head;
+    if(cursor == nullptr){
+        head = nullptr;
+        tail = nullptr;
+        return this;
+    }
+
+    head = new dnode<t>(other.head -> data());
+    cursor = cursor -> next();
+    tail = head;
+	while(cursor != nullptr){
+		tail -> set_next(new dnode<t>(cursor -> data()));
+		tail = tail->next();
+		cursor = cursor->next();
+	}
+    return this;
+}
+
+template<class t>
+dlist<t>::dlist(const dlist<t> &other){
+    dnode<t>* cursor = other.head;
+    if(cursor == nullptr){
+        head = nullptr;
+        tail = nullptr;
+        return;
+    }
+    head = new dnode<t>(other.head -> data());
+    cursor = cursor -> next();
+    tail = head;
+	while(cursor != nullptr){
+		tail -> set_next(new dnode<t>(cursor -> data()));
+		tail = tail->next();
+		cursor = cursor->next();
+	}
+}
+
+template<class t>
+size_t dlist<t>::size(){
+    if(head == nullptr){
+        return 0;
+    }
+    dnode<t>* cursor = head;
+    size_t x = 0;
+    while(cursor != nullptr){
+        x++;
+        cursor = cursor->next();
+    }
+    return x;
+}
+
+template<class t>
+void dlist<t>::show(){
+    if(head == nullptr){
+        return;
+    }
+    dnode<t>* cursor = head;
+    while(cursor != nullptr){
+        cout << cursor -> data() << endl;
+        cursor = cursor->next();
+    }
+}
+
+template<class t>
+void dlist<t>::reverse_show(){
+    if(head == nullptr){
+        return;
+    }
+    dnode<t>* cursor = tail;
+    while(cursor != nullptr){
+        cout << cursor->data() << endl;
+        cursor = cursor->previous();
+    }
+}
+
+template<class t>
+void dlist<t>::front_insert(t i){
+    if(head == nullptr){
+        head = new dnode<t>(i);
+        head->set_next(nullptr);
+        head->set_previous(nullptr);
+        tail = head;
+        return;
+    }
+    dnode<t>* cursor = head;
+    head = new dnode<t>(i);
+    head->set_next(cursor);
+    head->set_previous(nullptr);
+    cursor->set_previous(head);
+    
+}
+
+template<class t>
+void dlist<t>::rear_insert(t i){
+    if(head == nullptr){
+        head = new dnode<t>(i, nullptr, nullptr);
+        tail = head;
+        return;
+    }
+    tail -> set_next(new dnode<t>(i, nullptr, tail));
+    tail = tail->next();
+}
+
+template<class t>
+void dlist<t>::front_remove(){
+    if(head == nullptr){
+        return;
+    }
+    if(head -> next() == nullptr){
+        dnode<t>* cursor = head;
+        delete cursor;
+        head = tail = nullptr;
+    }
+    else{
+        dnode<t>* cursor = head;
+        head = cursor->next();
+        delete cursor;
+        head->set_previous(nullptr);
+    }
+}
+
+template<class t>
+void dlist<t>::rear_remove(){
+    if(tail == nullptr){
+        return;
+    }
+    if(tail -> previous() == nullptr){
+        dnode<t>* cursor = tail;
+        delete cursor;
+        head = tail = nullptr;
+    }
+    else{
+        dnode<t>* cursor = tail;
+        tail = cursor->previous();
+        delete cursor;
+        tail->set_next(nullptr);
+    }
+}
+
+template<class t>
+void dlist<t>::insert_before(node_iterator<t> temp, t i){
+    if(temp.cursor == nullptr){
+        return;
+    }
+    dnode<t>* follow = head;
+    if(temp.cursor == head){
+        head = new dnode<t>(i);
+        head->set_next(temp.cursor);
+        head->set_previous(nullptr);
+        temp.cursor->set_previous(head);
+    }
+    else{
+        while(follow -> next() != temp.cursor){
+            follow = follow->next();
+        }
+        temp.cursor->set_previous(new dnode<t>(i));
+        temp.cursor->previous()->set_next(temp.cursor);
+        temp.cursor->previous()->set_previous(follow);
+        follow->set_next(temp.cursor->previous());
+    }
+}
+
+template<class t>
+void dlist<t>::insert_after(node_iterator<t> temp, t i){
+    if(temp.cursor == nullptr){
+        return;
+    }
+    dnode<t>* follow = tail;
+    if(temp.cursor == tail){
+        tail = new dnode<t>(i);
+        tail->set_next(nullptr);
+        tail->set_previous(temp.cursor);
+        temp.cursor->set_next(tail);
+    }
+    else{
+        while(follow -> previous() != temp.cursor){
+            follow = follow->previous();
+        }
+        temp.cursor->set_next(new dnode<t>(i));
+        temp.cursor->next()->set_previous(temp.cursor);
+        temp.cursor->next()->set_next(follow);
+        follow->set_previous(temp.cursor->next());
+    }
+}
+
+template<class t>
+void dlist<t>::remove(node_iterator<t> temp){
+    if(temp.cursor == nullptr){
+        return;
+    }
+    if(temp.cursor == head && temp.cursor->next() == nullptr){
+        head = nullptr;
+        tail = nullptr;
+        delete temp.cursor;
+    }
+    else if(temp.cursor == tail){
+        tail = temp.cursor->previous();
+        tail->set_next(nullptr);
+        delete temp.cursor;
+    }
+    else if(temp.cursor == head && temp.cursor->next() != nullptr){
+        head = temp.cursor->next();
+        head->set_previous(nullptr);
+        delete temp.cursor;
+    }
+    else{
+        temp.cursor->previous()->set_next(temp.cursor->next());
+        temp.cursor->next()->set_previous(temp.cursor->previous());
+        delete temp.cursor;
+    }
+}
+template <class t>
+node_iterator<t> dlist<t>::r_begin() const{
+    return node_iterator<t>(tail);
+} // (return an iterator pointing to the end of the list) 
+
+template<class t>
+node_iterator<t> dlist<t>::r_end() const {
+    return node_iterator<t>(nullptr);
+} // (return an iterator pointing to nullptr - the "past the end" element)  
+
+template<class t>
+node_iterator<t> dlist<t>::begin() const {
+    return node_iterator<t>(head);
+} // (return an iterator pointing to the beginning of the list)  
+
+template<class t>
+node_iterator<t> dlist<t>::end() const {
+    return node_iterator<t>(nullptr);
+} // (return an iterator pointing to nullptr - the "past the end" element) 
