@@ -1,0 +1,218 @@
+Grammar
+
+    0 $accept: program $end
+
+    1 program: statements
+
+    2 statements: statements statement
+    3           | statement
+
+    4 statement: ID '=' tree
+    5          | PRINT ID
+    6          | error
+
+    7 tree: ID NUMBER
+    8     | ID NUMBER '[' list ']'
+
+    9 list: tree
+   10     | list ',' tree
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    ',' (44) 10
+    '=' (61) 4
+    '[' (91) 8
+    ']' (93) 8
+    error (256) 6
+    ID <str> (258) 4 5 7 8
+    NUMBER <num> (259) 7 8
+    PRINT (260) 5
+
+
+Nonterminals, with rules where they appear
+
+    $accept (10)
+        on left: 0
+    program (11)
+        on left: 1
+        on right: 0
+    statements (12)
+        on left: 2 3
+        on right: 1 2
+    statement (13)
+        on left: 4 5 6
+        on right: 2 3
+    tree <node> (14)
+        on left: 7 8
+        on right: 4 9 10
+    list <vec> (15)
+        on left: 9 10
+        on right: 8 10
+
+
+State 0
+
+    0 $accept: • program $end
+
+    error  shift, and go to state 1
+    ID     shift, and go to state 2
+    PRINT  shift, and go to state 3
+
+    program     go to state 4
+    statements  go to state 5
+    statement   go to state 6
+
+
+State 1
+
+    6 statement: error •
+
+    $default  reduce using rule 6 (statement)
+
+
+State 2
+
+    4 statement: ID • '=' tree
+
+    '='  shift, and go to state 7
+
+
+State 3
+
+    5 statement: PRINT • ID
+
+    ID  shift, and go to state 8
+
+
+State 4
+
+    0 $accept: program • $end
+
+    $end  shift, and go to state 9
+
+
+State 5
+
+    1 program: statements •
+    2 statements: statements • statement
+
+    error  shift, and go to state 1
+    ID     shift, and go to state 2
+    PRINT  shift, and go to state 3
+
+    $end  reduce using rule 1 (program)
+
+    statement  go to state 10
+
+
+State 6
+
+    3 statements: statement •
+
+    $default  reduce using rule 3 (statements)
+
+
+State 7
+
+    4 statement: ID '=' • tree
+
+    ID  shift, and go to state 11
+
+    tree  go to state 12
+
+
+State 8
+
+    5 statement: PRINT ID •
+
+    $default  reduce using rule 5 (statement)
+
+
+State 9
+
+    0 $accept: program $end •
+
+    $default  accept
+
+
+State 10
+
+    2 statements: statements statement •
+
+    $default  reduce using rule 2 (statements)
+
+
+State 11
+
+    7 tree: ID • NUMBER
+    8     | ID • NUMBER '[' list ']'
+
+    NUMBER  shift, and go to state 13
+
+
+State 12
+
+    4 statement: ID '=' tree •
+
+    $default  reduce using rule 4 (statement)
+
+
+State 13
+
+    7 tree: ID NUMBER •
+    8     | ID NUMBER • '[' list ']'
+
+    '['  shift, and go to state 14
+
+    $default  reduce using rule 7 (tree)
+
+
+State 14
+
+    8 tree: ID NUMBER '[' • list ']'
+
+    ID  shift, and go to state 11
+
+    tree  go to state 15
+    list  go to state 16
+
+
+State 15
+
+    9 list: tree •
+
+    $default  reduce using rule 9 (list)
+
+
+State 16
+
+    8 tree: ID NUMBER '[' list • ']'
+   10 list: list • ',' tree
+
+    ']'  shift, and go to state 17
+    ','  shift, and go to state 18
+
+
+State 17
+
+    8 tree: ID NUMBER '[' list ']' •
+
+    $default  reduce using rule 8 (tree)
+
+
+State 18
+
+   10 list: list ',' • tree
+
+    ID  shift, and go to state 11
+
+    tree  go to state 19
+
+
+State 19
+
+   10 list: list ',' tree •
+
+    $default  reduce using rule 10 (list)
