@@ -1,0 +1,115 @@
+#include<iostream>
+#include "tarray.h"
+
+template<class T>
+Tarray<T>::Tarray(){
+    used = 0;
+    capacity = 10;
+    current_index = 0;
+    data = new T[capacity];
+}
+template<class T>
+Tarray<T>::Tarray(T storage){
+    used = 0;
+    capacity = storage;
+    current_index = 0;
+    data = new T[capacity];
+}
+template<class T>
+Tarray<T>::~Tarray(){
+    delete []data;
+}
+
+template<class T>
+void Tarray<T>::operator = (const Tarray<T>& other){
+    if (this == &other){
+        return;
+    }
+    else {
+        delete []data;
+        capacity = other.capacity;
+        used = other.used;
+        current_index = other.current_index;
+        data = new Tarray[capacity];
+        for(size_t x = 0; x < used; x++){
+            data[x] = other.data[x];
+        }
+    }
+}
+
+template<class T>
+Tarray<T>::Tarray(const Tarray<T>& other){ // COPY FUNCTION
+    capacity = other.capacity;
+    used = other.used;
+    current_index = other.current_index;
+    data = new Tarray<T>[capacity];
+    for(size_t x = 0; x < used; x++){
+        data[x] = other.data[x];
+    }
+}
+// puts the item into the next available spot in the 
+// array. If the array is full, resize is called.
+template<class T>
+void Tarray<T>::add(T item){
+    if(used == capacity){
+        resize();
+    }
+    data[used] = item;
+    used++;
+}
+
+// iterator functions
+// places current_index at the beginning of the array
+template<class T>
+void Tarray<T>::start(){
+    current_index = 0;
+}
+
+// returns true if the current index is less than used
+template<class T>
+bool Tarray<T>::is_item()const{
+    if(current_index < used){
+        return true;
+    }
+    else{
+    return false;
+    }
+}
+
+// moves current index to the next array location
+template<class T>
+void Tarray<T>::advance(){
+    current_index++;
+}
+
+// returns the array item referenced by curent index
+template<class T>
+T Tarray<T>::current()const{
+    return data[current_index];
+}
+
+// removes the item at the current index
+template<class T>
+void Tarray<T>::remove_current(){
+    if(current_index > used){
+        return;
+    }
+    for(size_t x = current_index; x < used - 1; x++){
+        data[x] = data[x+1];
+    }
+    used--;
+}
+
+template<class T>
+void Tarray<T>::resize(){
+    T* extra = new T[capacity + 5];
+    for(size_t x = 0; x < used; x++){
+        extra[x] = data[x];
+    }
+    delete []data;
+    capacity += 5;
+    data = new T[capacity];
+    for(size_t x = 0; x < used; x++){
+        data[x] = extra[x];
+    }
+}
