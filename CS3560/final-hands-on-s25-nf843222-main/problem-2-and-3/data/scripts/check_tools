@@ -1,0 +1,125 @@
+#!/usr/bin/env python
+"""Check for tools availability.
+
+An internal tool for cs3560 that checks for tools
+commonly use in the class on common hosts in EECS
+labs and servers.
+
+Note: This is still a prototype and have hard coded values.
+"""
+import subprocess
+import time
+from typing import Mapping
+
+
+def take_first_line(result) -> str:
+    lines = result.decode().replace("\r", "").split("\n")
+    return lines[0].strip()
+
+
+class BaseTool:
+
+    def __init__(self, name, cmd):
+        self.name = name
+        self.cmd = cmd
+        self.checked_hosts: list[str] = []
+        self.available_hosts: list[str] = []
+        self.results: Mapping[str, str] = dict()
+
+    def check_host(self, host, username) -> None:
+        self.checked_hosts.append(host)
+        try:
+            result = subprocess.check_output(f"ssh -t -q {username}@{host} '{self.cmd}'", shell=True)
+            self.results[host] = self.process_output(result)
+            self.available_hosts.append(host)
+        except subprocess.CalledProcessError as e:
+            self.results[host] = self.process_error(e)
+
+    def process_output(self, result) -> str:
+        return result.decode().strip()
+    
+    def process_error(self, e) -> str:
+        return str(e)
+    
+    def __str__(self) -> str:
+        host_text = ", ".join(self.available_hosts)
+        return f"name: {self.name}\nhosts: {host_text}"
+
+    def __repr__(self) -> str:
+        return self.__str__()
+    
+class CppCompiler(BaseTool):
+    def __init__(self):
+        super().__init__("g++", "g++ --version")
+
+    def process_output(self, result):
+        return take_first_line(result)
+    
+class CMake(BaseTool):
+    def __init__(self):
+        super().__init__("cmake", "cmake --version")
+
+    def process_output(self, result):
+        return take_first_line(result)
+
+class Doxygen(BaseTool):
+    def __init__(self):
+        super().__init__("doxygen", "doxygen --version")
+
+class Cppcheck(BaseTool):
+    def __init__(self):
+        super().__init__("cppcheck", "cppcheck --version")
+
+class Valgrind(BaseTool):
+    def __init__(self):
+        super().__init__("valgrind", "valgrind --version")
+
+class Curl(BaseTool):
+    def __init__(self):
+        super().__init__("curl", "curl --version")
+
+    def process_output(self, result):
+        return take_first_line(result)
+
+class Wget(BaseTool):
+    def __init__(self):
+        super().__init__("wget", "wget --version")
+
+    def process_output(self, result):
+        return take_first_line(result)
+
+class Git(BaseTool):
+    def __init__(self):
+        super().__init__("git", "git --version")
+
+if __name__ == "__main__":
+    username = "kchusap"
+    tools = [
+        CppCompiler(),
+        CMake(),
+        Doxygen(),
+        Cppcheck(),
+        Valgrind(),
+        Wget(),
+        Curl(),
+        Git(),
+    ]
+
+    hosts = [
+        "p1.cs.ohio.edu",
+        "pu1.cs.ohio.edu",
+        "odd07.cs.ohio.edu",
+    ]
+
+    results = dict()
+
+    for host in hosts:
+        print(f"checking host: {host} ...")
+
+        results[host] = dict()
+        for tool in tools:
+            tool.check_host(host, username)
+            time.sleep(2)
+
+    for tool in tools:
+        print(tool, end="\n\n")
