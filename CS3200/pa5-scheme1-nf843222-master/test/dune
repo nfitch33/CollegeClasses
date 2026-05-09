@@ -1,0 +1,3 @@
+(test
+ (name pa5)
+ (libraries alcotest pa5 qcheck qcheck-alcotest sexplib yojson str unix))
