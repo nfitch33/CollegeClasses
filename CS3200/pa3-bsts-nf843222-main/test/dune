@@ -1,0 +1,4 @@
+(test
+ (name pa3)
+ (modules pa3 llm_test llm_client) ;
+ (libraries pa3 alcotest qcheck qcheck-alcotest yojson unix str))
