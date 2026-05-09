@@ -1,0 +1,99 @@
+# dune test
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /home/nf843222/.cache/dune/db
+# Workspace root:
+# /home/nf843222/.vscode-server/cs3200/pa2-naturals-nf843222-main/pa2-naturals-nf843222-main
+# Auto-detected concurrency: 16
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /home/nf843222/.opam/cs3200-2025fa/bin/ocamlc.opt -config > /tmp/dune_bfa32e_output
+$ (cd _build/default && /home/nf843222/.opam/cs3200-2025fa/bin/ocamldep.opt -modules -impl lib/lib.ml) > _build/default/lib/.pa2.objs/pa2__Lib.impl.d
+$ (cd _build/default && /home/nf843222/.opam/cs3200-2025fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -bin-annot-occurrences -I lib/.pa2.objs/byte -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/engine -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/stdlib_ext -I /home/nf843222/.opam/cs3200-2025fa/lib/astring -I /home/nf843222/.opam/cs3200-2025fa/lib/cmdliner -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/cli -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/tty -I /home/nf843222/.opam/cs3200-2025fa/lib/ocaml/unix -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2 -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2/advanced -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core/runner -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-ounit -I /home/nf843222/.opam/cs3200-2025fa/lib/re -I /home/nf843222/.opam/cs3200-2025fa/lib/seq -I /home/nf843222/.opam/cs3200-2025fa/lib/stdlib-shims -I /home/nf843222/.opam/cs3200-2025fa/lib/uutf -no-alias-deps -opaque -open Pa2 -o lib/.pa2.objs/byte/pa2__Lib.cmo -c -impl lib/lib.ml)
+$ (cd _build/default && /home/nf843222/.opam/cs3200-2025fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -bin-annot-occurrences -I test/.pa2.eobjs/byte -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/engine -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/stdlib_ext -I /home/nf843222/.opam/cs3200-2025fa/lib/astring -I /home/nf843222/.opam/cs3200-2025fa/lib/cmdliner -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/cli -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/tty -I /home/nf843222/.opam/cs3200-2025fa/lib/ocaml/str -I /home/nf843222/.opam/cs3200-2025fa/lib/ocaml/unix -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2 -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2/advanced -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core/runner -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-ounit -I /home/nf843222/.opam/cs3200-2025fa/lib/re -I /home/nf843222/.opam/cs3200-2025fa/lib/seq -I /home/nf843222/.opam/cs3200-2025fa/lib/stdlib-shims -I /home/nf843222/.opam/cs3200-2025fa/lib/uutf -I /home/nf843222/.opam/cs3200-2025fa/lib/yojson -I lib/.pa2.objs/byte -no-alias-deps -opaque -o test/.pa2.eobjs/byte/dune__exe__Pa2.cmi -c -intf test/pa2.mli)
+$ (cd _build/default && /home/nf843222/.opam/cs3200-2025fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I lib/.pa2.objs/byte -I lib/.pa2.objs/native -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/engine -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/stdlib_ext -I /home/nf843222/.opam/cs3200-2025fa/lib/astring -I /home/nf843222/.opam/cs3200-2025fa/lib/cmdliner -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/cli -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/tty -I /home/nf843222/.opam/cs3200-2025fa/lib/ocaml/unix -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2 -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2/advanced -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core/runner -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-ounit -I /home/nf843222/.opam/cs3200-2025fa/lib/re -I /home/nf843222/.opam/cs3200-2025fa/lib/seq -I /home/nf843222/.opam/cs3200-2025fa/lib/stdlib-shims -I /home/nf843222/.opam/cs3200-2025fa/lib/uutf -cmi-file lib/.pa2.objs/byte/pa2__Lib.cmi -no-alias-deps -opaque -open Pa2 -o lib/.pa2.objs/native/pa2__Lib.cmx -c -impl lib/lib.ml)
+$ (cd _build/default && /home/nf843222/.opam/cs3200-2025fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o lib/pa2.cmxa lib/.pa2.objs/native/pa2.cmx lib/.pa2.objs/native/pa2__Util.cmx lib/.pa2.objs/native/pa2__Lib.cmx)
+$ (cd _build/default && /home/nf843222/.opam/cs3200-2025fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I test/.pa2.eobjs/byte -I test/.pa2.eobjs/native -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/engine -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/stdlib_ext -I /home/nf843222/.opam/cs3200-2025fa/lib/astring -I /home/nf843222/.opam/cs3200-2025fa/lib/cmdliner -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/cli -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/tty -I /home/nf843222/.opam/cs3200-2025fa/lib/ocaml/str -I /home/nf843222/.opam/cs3200-2025fa/lib/ocaml/unix -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2 -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2/advanced -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core/runner -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-ounit -I /home/nf843222/.opam/cs3200-2025fa/lib/re -I /home/nf843222/.opam/cs3200-2025fa/lib/seq -I /home/nf843222/.opam/cs3200-2025fa/lib/stdlib-shims -I /home/nf843222/.opam/cs3200-2025fa/lib/uutf -I /home/nf843222/.opam/cs3200-2025fa/lib/yojson -I lib/.pa2.objs/byte -I lib/.pa2.objs/native -cmi-file test/.pa2.eobjs/byte/dune__exe__Pa2.cmi -no-alias-deps -opaque -o test/.pa2.eobjs/native/dune__exe__Pa2.cmx -c -impl test/pa2.ml)
+$ (cd _build/default && /home/nf843222/.opam/cs3200-2025fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o test/pa2.exe /home/nf843222/.opam/cs3200-2025fa/lib/astring/astring.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/cmdliner/cmdliner.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/uutf/uutf.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/stdlib_ext/alcotest_stdlib_ext.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/fmt/fmt.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/fmt/cli/fmt_cli.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/re/re.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/stdlib-shims/stdlib_shims.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/engine/alcotest_engine.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/ocaml/unix/unix.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/fmt/tty/fmt_tty.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/alcotest.cmxa -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core/qcheck_core.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core/runner/qcheck_runner.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/ounit2/advanced/oUnitAdvanced.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/ounit2/oUnit.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-ounit/qcheck_ounit.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/qcheck/qcheck.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-alcotest/qcheck_alcotest.cmxa lib/pa2.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/yojson/yojson.cmxa /home/nf843222/.opam/cs3200-2025fa/lib/ocaml/str/str.cmxa test/.pa2.eobjs/native/dune__exe__Pa2.cmx)
+$ (cd _build/default/test && ./pa2.exe)
+>
+> -----NAME: Nathaniel Fitch ID:p101093645 -----
+> qcheck random seed: 148252564
+> No API key found. Skipping plus tests.
+> No API key found. Skipping mult tests.
+> No API key found. Skipping pow tests.
+> No API key found. Skipping minus tests.
+> No API key found. Skipping even tests.
+> No API key found. Skipping odd tests.
+> No API key found. Skipping leq tests.
+> No API key found. Skipping psucc tests.
+> No API key found. Skipping pplus tests.
+> No API key found. Skipping pmult tests.
+> Testing `PA2'.
+> This run has ID `HS1PG0UU'.
+>
+>   [OK]          test            0   pred.
+>   [OK]          test            1   plus.
+>   [OK]          test            2   mult.
+>   [OK]          test            3   fact.
+>   [OK]          test            4   pow.
+>   [OK]          test            5   minus.
+>   [OK]          test            6   minus_bad.
+>   [OK]          test            7   even_odd.
+>   [OK]          test            8   leq.
+>   [OK]          test            9   psucc.
+>   [OK]          test           10   pplus.
+>   [OK]          test           11   pmult.
+>   [OK]          qcheck          0   plus_left_identity.
+>   [OK]          qcheck          1   plus_right_identity.
+>   [OK]          qcheck          2   plus_comm.
+>   [OK]          qcheck          3   plus_assoc.
+>   [OK]          qcheck          4   plus_distr_l.
+>   [OK]          qcheck          5   plus_distr_r.
+>   [OK]          qcheck          6   mult_left_identity.
+>   [OK]          qcheck          7   mult_right_identity.
+>   [OK]          qcheck          8   mult_left_annihilator.
+>   [OK]          qcheck          9   mult_right_annihilator.
+>   [OK]          qcheck         10   mult_comm.
+>   [OK]          qcheck         11   mult_assoc.
+>   [OK]          qcheck         12   mult_distr_l.
+>   [OK]          qcheck         13   mult_distr_r.
+>   [OK]          qcheck         14   fact_mult.
+>   [OK]          qcheck         15   pow_distr_plus.
+>   [OK]          qcheck         16   pow_distr_mult.
+>   [OK]          qcheck         17   curry.
+>   [OK]          qcheck         18   even_or_odd.
+>   [OK]          qcheck         19   not_even_and_odd.
+>   [OK]          qcheck         20   even_S_odd.
+>   [OK]          qcheck         21   odd_S_even.
+>   [OK]          qcheck         22   even_even_plus.
+>   [OK]          qcheck         23   odd_even_plus.
+>   [OK]          qcheck         24   even_odd_plus.
+>   [OK]          qcheck         25   odd_odd_plus.
+>   [OK]          qcheck         26   even_mult_l.
+>   [OK]          qcheck         27   even_mult_r.
+>   [OK]          qcheck         28   odd_mult.
+>   [OK]          qcheck         29   leq_refl.
+>   [OK]          qcheck         30   leq_trans.
+>   [OK]          qcheck         31   leq_S.
+>   [OK]          qcheck         32   leq_plus_minus.
+>   [OK]          qcheck         33   pplus_comm.
+>   [OK]          qcheck         34   pplus_assoc.
+>   [OK]          qcheck         35   pplus_distr_l.
+>   [OK]          qcheck         36   pplus_distr_r.
+>   [OK]          qcheck         37   pmult_left_identity.
+>   [OK]          qcheck         38   pmult_right_identity.
+>   [OK]          qcheck         39   pmult_comm.
+>   [OK]          qcheck         40   pmult_assoc.
+>   [OK]          qcheck         41   pmult_distr_l.
+>   [OK]          qcheck         42   pmult_distr_r.
+>
+> Full test results in `~/.vscode-server/cs3200/pa2-naturals-nf843222-main/pa2-naturals-nf843222-main/_build/default/test/_build/_tests/PA2'.
+> Test Successful in 0.008s. 55 tests run.
