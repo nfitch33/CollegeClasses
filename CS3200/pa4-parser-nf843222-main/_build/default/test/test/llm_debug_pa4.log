@@ -1,0 +1,31 @@
+=== LLM Test Log (PA4 Parser + Interpreter) ===
+UTC 2025-11-18 19:11:39
+
+[LLM] Loaded 0 parser cases (fallback synthetic)
+[LLM] Loaded 5 parser cases
+[LLM] Loaded 0 interpreter cases
+[PARSER] simple_add
+  input=(+ 3 4)
+  expected_AST=binary add of 3 and 4
+  result=Ok(...AST built...)  success=true
+
+[PARSER] nested_let
+  input=(let x 5 (+ x 2))
+  expected_AST=let binding x=5 used in (+ x 2)
+  result=Ok(...AST built...)  success=true
+
+[PARSER] boolean_not
+  input=(not false)
+  expected_AST=unary not applied to false
+  result=Ok(...AST built...)  success=true
+
+[PARSER] if_expression
+  input=(if true 1 2)
+  expected_AST=if condition true yields 1
+  result=Ok(...AST built...)  success=true
+
+[PARSER] complex_nesting
+  input=(let y 10 (if (< y 20) (* y 2) (/ y 2)))
+  expected_AST=nested let and if producing 20
+  result=Ok(...AST built...)  success=true
+

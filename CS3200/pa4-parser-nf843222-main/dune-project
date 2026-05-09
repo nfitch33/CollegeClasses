@@ -1,0 +1,25 @@
+(lang dune 3.1)
+
+(name pa4)
+
+(generate_opam_files true)
+
+(source
+ (github username/reponame))
+
+(authors "Your name here")
+
+(maintainers "Alex Bagnall")
+
+(license LICENSE)
+
+(documentation https://url/to/documentation)
+
+(package
+ (name pa4)
+ (synopsis "PA4")
+ (description "PA4")
+ (depends ocaml dune)
+ (tags (ohio university cs3200 pa4 ocaml)))
+
+; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
