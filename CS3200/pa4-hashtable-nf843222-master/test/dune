@@ -1,0 +1,3 @@
+(test
+ (name llm_test)
+ (libraries alcotest pa4 qcheck qcheck-alcotest yojson str num))
