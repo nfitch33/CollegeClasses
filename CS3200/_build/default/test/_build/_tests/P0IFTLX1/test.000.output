@@ -1,6 +1,0 @@
-[33mASSERT[0m len [0] = 1
-[33mASSERT[0m len [] = 0
-[33mASSERT[0m len [1; 2; 3; 4; 5] = 5
-[33mASSERT[0m len [1; 2] = 2
-[33mASSERT[0m len [false] = 1
-[33mASSERT[0m len [["heimerdinger"]] = 1
