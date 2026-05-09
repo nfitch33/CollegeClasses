@@ -1,0 +1,24 @@
+# dune test
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /home/nf843222/.cache/dune/db
+# Workspace root:
+# /home/nf843222/.vscode-server/cs3200/pa5-scheme1-nf843222-master
+# Auto-detected concurrency: 16
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /home/nf843222/.opam/cs3200-2025fa/bin/ocamlc.opt -config > /tmp/dune_9f7b3d_output
+$ (cd _build/default && /home/nf843222/.opam/cs3200-2025fa/bin/ocamldep.opt -modules -impl lib/lib.ml) > _build/default/lib/.pa5.objs/pa5__Lib.impl.d
+$ (cd _build/default && /home/nf843222/.opam/cs3200-2025fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -bin-annot-occurrences -I lib/.pa5.objs/byte -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/engine -I /home/nf843222/.opam/cs3200-2025fa/lib/alcotest/stdlib_ext -I /home/nf843222/.opam/cs3200-2025fa/lib/astring -I /home/nf843222/.opam/cs3200-2025fa/lib/cmdliner -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/cli -I /home/nf843222/.opam/cs3200-2025fa/lib/fmt/tty -I /home/nf843222/.opam/cs3200-2025fa/lib/ocaml/unix -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2 -I /home/nf843222/.opam/cs3200-2025fa/lib/ounit2/advanced -I /home/nf843222/.opam/cs3200-2025fa/lib/parsexp -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-alcotest -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-core/runner -I /home/nf843222/.opam/cs3200-2025fa/lib/qcheck-ounit -I /home/nf843222/.opam/cs3200-2025fa/lib/re -I /home/nf843222/.opam/cs3200-2025fa/lib/seq -I /home/nf843222/.opam/cs3200-2025fa/lib/sexplib -I /home/nf843222/.opam/cs3200-2025fa/lib/sexplib0 -I /home/nf843222/.opam/cs3200-2025fa/lib/stdlib-shims -I /home/nf843222/.opam/cs3200-2025fa/lib/uutf -no-alias-deps -opaque -open Pa5 -o lib/.pa5.objs/byte/pa5__Lib.cmo -c -impl lib/lib.ml)
+> File "lib/lib.ml", line 215, characters 4-9:
+> 215 | let parse (s : string) : exp res =
+>           ^^^^^
+> Error (warning 32 [unused-value-declaration]): unused value parse.
+[2]
