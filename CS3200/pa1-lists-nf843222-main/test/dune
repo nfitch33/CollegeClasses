@@ -1,0 +1,3 @@
+(test
+ (name pa1)
+ (libraries alcotest pa1))

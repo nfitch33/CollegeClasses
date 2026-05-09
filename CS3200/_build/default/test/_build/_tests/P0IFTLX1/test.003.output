@@ -1,0 +1,4 @@
+[33mASSERT[0m rev [1; 2; 3] = [3; 2; 1]
+[33mASSERT[0m rev [] = []
+[33mASSERT[0m rev [1] = [1]
+[33mASSERT[0m rev [false; true] = [true; false]

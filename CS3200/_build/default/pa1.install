@@ -1,0 +1,12 @@
+lib: [
+  "_build/install/default/lib/pa1/META"
+  "_build/install/default/lib/pa1/dune-package"
+  "_build/install/default/lib/pa1/opam"
+]
+bin: [
+  "_build/install/default/bin/pa1"
+]
+doc: [
+  "_build/install/default/doc/pa1/README.md"
+  "_build/install/default/doc/pa1/README.md:Zone.Identifier"
+]
