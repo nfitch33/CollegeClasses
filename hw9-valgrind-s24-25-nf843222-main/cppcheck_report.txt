@@ -1,5 +1,0 @@
-[1mprogram3.cpp:17:24: [31mperformance:[39m Function parameter 'name' should be passed by const reference. [passedByValue][0m
-    BankAccount(string name, float balance) : name(name), balance(balance) {}
-                       ^
-[1mnofile:0:0: [31minformation:[39m Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem][0m
-
