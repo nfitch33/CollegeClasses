@@ -1,0 +1,24 @@
+[problem]
+name = "making-commits"
+difficulty = 0
+objective = ""
+
+[problem.tests.test-1]
+name = "tree 1"
+setup = ""
+run = "python scripts/grade.py -k tree1"
+input = ""
+output = ""
+comparison = "included"
+timeout = 10
+points = 10
+
+[problem.tests.test-2]
+name = "tree 2"
+setup = ""
+run = "python scripts/grade.py -k tree2"
+input = ""
+output = ""
+comparison = "included"
+timeout = 10
+points = 10
