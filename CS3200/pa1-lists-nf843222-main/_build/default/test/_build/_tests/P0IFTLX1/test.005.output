@@ -1,0 +1,4 @@
+[33mASSERT[0m isort [3; 2; 1] = [1; 2; 3]
+[33mASSERT[0m isort [] = []
+[33mASSERT[0m isort [1] = [1]
+[33mASSERT[0m isort [3; 5; -7; 1; 0; 200] = [-7; 0; 1; 3; 5; 200]
