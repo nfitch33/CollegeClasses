@@ -1,0 +1,6 @@
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 999/999 [00:00<00:00, 15130.03it/s]
+i:  1
+   1: sum of 1 perfect squares: computed in 1.3113021850585938e-05 sec. Elapsed time: 1.6862494945526123 sec.
+i:  278
+ 278: sum of 3 perfect squares: computed in 0.00022649765014648438 sec. Elapsed time: 1.7073283195495605 sec.
+Total elapsed time to compute sum of squares up to 1000: 1.7525742053985596 seconds

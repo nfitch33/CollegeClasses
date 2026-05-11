@@ -1,0 +1,21 @@
+  1%|▊                                                                                                                                      | 60/9999 [00:48<4:53:01,  1.77s/it]
+i:  1
+    1: sum of 1 perfect squares: computed in 7.3909759521484375e-06 sec. Elapsed time: 2.875284194946289 sec.
+i:  3
+    3: sum of 3 perfect squares: computed in 2.47955322265625e-05 sec. Elapsed time: 2.875784158706665 sec.
+i:  6
+    6: sum of 3 perfect squares: computed in 9.5367431640625e-05 sec. Elapsed time: 2.876312732696533 sec.
+i:  7
+    7: sum of 4 perfect squares: computed in 0.0036957263946533203 sec. Elapsed time: 2.8803584575653076 sec.
+i:  15
+   15: sum of 4 perfect squares: computed in 0.08687734603881836 sec. Elapsed time: 2.970424175262451 sec.
+i:  23
+   23: sum of 4 perfect squares: computed in 0.4587070941925049 sec. Elapsed time: 3.442963123321533 sec.
+i:  31
+   31: sum of 4 perfect squares: computed in 1.0405547618865967 sec. Elapsed time: 5.386596918106079 sec.
+i:  39
+   39: sum of 4 perfect squares: computed in 3.489128589630127 sec. Elapsed time: 8.930246591567993 sec.
+i:  47
+   47: sum of 4 perfect squares: computed in 7.4337477684021 sec. Elapsed time: 16.495066165924072 sec.
+i:  60
+   60: sum of 4 perfect squares: computed in 21.01216745376587 sec. Elapsed time: 51.30269002914429 sec.

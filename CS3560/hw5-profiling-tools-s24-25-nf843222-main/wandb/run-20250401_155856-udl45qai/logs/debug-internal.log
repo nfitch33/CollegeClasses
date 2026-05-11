@@ -1,0 +1,7 @@
+{"time":"2025-04-01T15:58:56.313184462-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/nf843222/.vscode-server/3560/sum-of-squares/wandb/run-20250401_155856-udl45qai/logs/debug-core.log"}
+{"time":"2025-04-01T15:58:58.491013005-04:00","level":"INFO","msg":"created new stream","id":"udl45qai"}
+{"time":"2025-04-01T15:58:58.491197971-04:00","level":"INFO","msg":"stream: started","id":"udl45qai"}
+{"time":"2025-04-01T15:58:58.491238246-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"udl45qai"}
+{"time":"2025-04-01T15:58:58.491463311-04:00","level":"INFO","msg":"sender: started","stream_id":"udl45qai"}
+{"time":"2025-04-01T15:58:58.521521615-04:00","level":"INFO","msg":"handler: started","stream_id":"udl45qai"}
+{"time":"2025-04-01T15:58:59.642278157-04:00","level":"INFO","msg":"Starting system monitor"}

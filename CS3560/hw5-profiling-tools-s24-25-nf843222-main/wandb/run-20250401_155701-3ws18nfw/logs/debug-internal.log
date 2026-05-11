@@ -1,0 +1,7 @@
+{"time":"2025-04-01T15:57:01.707859026-04:00","level":"INFO","msg":"stream: starting","core version":"0.19.8","symlink path":"/home/nf843222/.vscode-server/3560/sum-of-squares/wandb/run-20250401_155701-3ws18nfw/logs/debug-core.log"}
+{"time":"2025-04-01T15:57:03.520369502-04:00","level":"INFO","msg":"created new stream","id":"3ws18nfw"}
+{"time":"2025-04-01T15:57:03.520418104-04:00","level":"INFO","msg":"stream: started","id":"3ws18nfw"}
+{"time":"2025-04-01T15:57:03.521320788-04:00","level":"INFO","msg":"handler: started","stream_id":"3ws18nfw"}
+{"time":"2025-04-01T15:57:03.521356951-04:00","level":"INFO","msg":"writer: Do: started","stream_id":"3ws18nfw"}
+{"time":"2025-04-01T15:57:03.52143782-04:00","level":"INFO","msg":"sender: started","stream_id":"3ws18nfw"}
+{"time":"2025-04-01T15:57:03.791487204-04:00","level":"INFO","msg":"Starting system monitor"}
