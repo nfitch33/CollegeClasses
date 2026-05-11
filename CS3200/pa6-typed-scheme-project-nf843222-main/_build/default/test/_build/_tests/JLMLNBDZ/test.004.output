@@ -1,0 +1,46 @@
+[33mASSERT[0m should fail: * 3 true
+
+[33mASSERT[0m should fail: (not 123)
+
+[33mASSERT[0m should fail: 4 * 5
+
+[33mASSERT[0m should fail: * true false
+
+[33mASSERT[0m should fail: (if false 0 true)
+
+[33mASSERT[0m should fail: (* x 4)
+
+[33mASSERT[0m should fail: (let x bool 3 (* x 2))
+
+[33mASSERT[0m should fail: (if 0 1 2)
+
+[33mASSERT[0m should fail: (if true 0 true)
+
+[33mASSERT[0m should fail: ((fun x bool (not x)) 3)
+
+[33mASSERT[0m should fail: (+ 123 false)
+
+[33mASSERT[0m should fail: ((fun y float (+ y 1)) false)
+
+[33mASSERT[0m should fail: (LET x float 5 (* x x))
+
+[33mASSERT[0m should fail: (or (and false true) (or x false))
+
+[33mASSERT[0m should fail: (((fun x float x) 123) true)
+
+[33mASSERT[0m should fail: (let x float 3 (* x true))
+
+[33mASSERT[0m should fail: (/ (let x float 0 0) (let x float 0 x))
+
+[1mFile "list.ml", line 112, character 12:
+[0m[31mFAIL[0m should fail: (/ (let x float 0 0) (let x float 0 x))
+
+
+   Expected: `[32mtrue[0m'
+   Received: `[31mfalse[0m'
+
+Raised at Alcotest_engine__Test.check in file "src/alcotest-engine/test.ml", lines 216-226, characters 4-19
+Called from Stdlib__List.iter in file "list.ml", line 112, characters 12-15
+Called from Alcotest_engine__Core.Make.protect_test.(fun) in file "src/alcotest-engine/core.ml", line 186, characters 17-23
+Called from Alcotest_engine__Monad.Identity.catch in file "src/alcotest-engine/monad.ml", line 24, characters 31-35
+

@@ -1,0 +1,58 @@
+[33mASSERT[0m true
+
+[33mASSERT[0m (if true 0 1)
+
+[33mASSERT[0m (let x float 3 4)
+
+[33mASSERT[0m (let x bool false (or (and false true) (or x false)))
+
+[33mASSERT[0m (let x float 5 (* x x))
+
+[33mASSERT[0m (and (and false true) (or true false))
+
+[33mASSERT[0m (let x float (let x float (+ 3 4) x) (* x x))
+
+[33mASSERT[0m (let b bool true (or false b))
+
+[33mASSERT[0m ((fun x float x) 123)
+
+[33mASSERT[0m (if false false true)
+
+[33mASSERT[0m (or (and false true) (or true false))
+
+[33mASSERT[0m (neg 2)
+
+[33mASSERT[0m ((fun y float (+ y 1)) 2)
+
+[33mASSERT[0m (/ 1 2)
+
+[33mASSERT[0m (let x float 2 (let y float 3 (let z float 5 (- x (* y z)))))
+
+[33mASSERT[0m (let b bool true (or (and false true) (or b false)))
+
+[33mASSERT[0m (let x float 4 (let x float 5 (* x x)))
+
+[33mASSERT[0m ((fun x bool (not x)) false)
+
+[33mASSERT[0m (((fun m float (fun n float (/ m n))) 10) 5)
+
+[33mASSERT[0m (let f (-> float float)
+  (rec f (-> float float)
+    (fun n float
+      (if (< n 1)
+         0
+         (+ n (f (- n 1))))))
+  (f 10))
+
+[33mASSERT[0m (- 0 (/ 1 2))
+
+[33mASSERT[0m (and false true)
+
+[33mASSERT[0m (* 3 4)
+
+[33mASSERT[0m (+ (let x float 0 (+ x x)) 0)
+
+[33mASSERT[0m 3
+
+[33mASSERT[0m (let b bool true (and b true))
+

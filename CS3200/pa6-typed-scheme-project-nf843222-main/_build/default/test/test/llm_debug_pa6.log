@@ -1,0 +1,158 @@
+=== LLM Test Log (PA6 Typed Scheme1) ===
+UTC 2025-12-03 03:34:25
+
+NO_API_KEYS AVAILABLE
+[LLM] interp retry 1: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] interp retry 2: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] interp retry 3: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] interp retry 4: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] interp retry 5: got 0 valid — need 5
+[LLM] GIVING UP for interp — using fallback
+NO_API_KEYS AVAILABLE
+[LLM] tycheck retry 1: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] tycheck retry 2: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] tycheck retry 3: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] tycheck retry 4: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] tycheck retry 5: got 0 valid — need 5
+[LLM] GIVING UP for tycheck — using fallback
+NO_API_KEYS AVAILABLE
+[LLM] desugar retry 1: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] desugar retry 2: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] desugar retry 3: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] desugar retry 4: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] desugar retry 5: got 0 valid — need 5
+[LLM] GIVING UP for desugar — using fallback
+NO_API_KEYS AVAILABLE
+[LLM] parse_exp retry 1: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] parse_exp retry 2: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] parse_exp retry 3: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] parse_exp retry 4: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] parse_exp retry 5: got 0 valid — need 5
+[LLM] GIVING UP for parse_exp — using fallback
+NO_API_KEYS AVAILABLE
+[LLM] parse_ty retry 1: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] parse_ty retry 2: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] parse_ty retry 3: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] parse_ty retry 4: got 0 valid — need 5
+NO_API_KEYS AVAILABLE
+[LLM] parse_ty retry 5: got 0 valid — need 5
+[LLM] GIVING UP for parse_ty — using fallback
+[PARSE_TY] ty_bool
+  bool
+  result=TBool
+
+[PARSE_TY] ty_float
+  float
+  result=TFloat
+
+[PARSE_TY] ty_arrow1
+  (-> float float)
+  result=(-> TFloat TFloat)
+
+[PARSE_TY] ty_arrow2
+  (-> bool float)
+  result=(-> TBool TFloat)
+
+[PARSE_TY] ty_nested
+  (-> float (-> float bool))
+  result=(-> TFloat (-> TFloat TBool))
+
+[PARSE_EXP] id_x
+  x
+  x
+
+[PARSE_EXP] simple_add
+  (+ 3 4)
+  (EBinexp BAdd (VFloat 3.) (VFloat 4.))
+
+[PARSE_EXP] fun_id
+  (fun x float x)
+  (EFun x TFloat x)
+
+[PARSE_EXP] app_fun
+  ((fun x float x) 5)
+  (EApp(EFun x TFloat x) (VFloat 5.))
+
+[PARSE_EXP] rec_id
+  (rec f (-> float float) f)
+  (ERec f (-> TFloat TFloat) f)
+
+[DESUGAR] and_tt
+  (and true true)
+  (EIte (VBool true) (VBool true) (VBool false))
+
+[DESUGAR] or_tf
+  (or true false)
+  (EIte (VBool true) (VBool true) (VBool false))
+
+[DESUGAR] neg_v
+  (neg 5)
+  (EBinexp BSub (VFloat 0.) (VFloat 5.))
+
+[DESUGAR] let1
+  (let x float 3 x)
+  (EApp(EFun x TFloat x) (VFloat 3.))
+
+[DESUGAR] nested
+  (and (or false true) true)
+  (EIte (EIte (VBool false) (VBool true) (VBool true)) (VBool true) (VBool false))
+
+[TYCHECK] tc_bool
+  true
+  TBool
+
+[TYCHECK] tc_add
+  (+ 2 3)
+  TFloat
+
+[TYCHECK] tc_fun
+  (fun x float (+ x 1))
+  (-> TFloat TFloat)
+
+[TYCHECK] tc_if
+  (if true 1 2)
+  TFloat
+
+[TYCHECK] tc_err
+  (+ true 1)
+  ERROR=binary operator applied to wrong types
+
+[INTERP] i_val
+  3
+  VFloat 3.000
+
+[INTERP] i_bool
+  false
+  VBool false
+
+[INTERP] i_add
+  (+ 2 3)
+  VFloat 5.000
+
+[INTERP] i_fun
+  ((fun x float (+ x 2)) 3)
+  VFloat 5.000
+
+[INTERP] i_if
+  (if false 1 9)
+  VFloat 9.000
+
