@@ -1,0 +1,11 @@
+# Macro is from https://vicrucann.github.io/tutorials/quick-cmake-doxygen/
+PROJECT_NAME           = "CS3560 CMake Examples - 3-docs-generation-with-doxygen"
+PROJECT_BRIEF          = "A small CMake example for CS3560"
+INPUT                  = "@CMAKE_CURRENT_SOURCE_DIR@/../" "@CMAKE_CURRENT_SOURCE_DIR@/../source" "@CMAKE_CURRENT_SOURCE_DIR@/../tests" "@CMAKE_CURRENT_SOURCE_DIR@/../docs"
+OUTPUT_DIRECTORY       = "@CMAKE_CURRENT_BINARY_DIR@/docs-generated/"
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+USE_MDFILE_AS_MAINPAGE = README.md
+QUIET                  = YES
+HAVE_DOT               = NO
+HTML_EXTRA_FILES       = @CMAKE_CURRENT_SOURCE_DIR@/2401fal19proj6.docx
