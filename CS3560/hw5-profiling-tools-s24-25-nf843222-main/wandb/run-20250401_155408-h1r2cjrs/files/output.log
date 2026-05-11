@@ -1,0 +1,14 @@
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 999/999 [00:00<00:00, 9830.79it/s]
+i:  1
+   1: sum of 1 perfect squares: computed in 5.0067901611328125e-06 sec. Elapsed time: 2.705610990524292 sec.
+i:  15
+  15: sum of 4 perfect squares: computed in 1.049041748046875e-05 sec. Elapsed time: 2.7066359519958496 sec.
+i:  47
+  47: sum of 4 perfect squares: computed in 2.4080276489257812e-05 sec. Elapsed time: 2.708548069000244 sec.
+i:  124
+ 124: sum of 4 perfect squares: computed in 5.9604644775390625e-05 sec. Elapsed time: 2.7133049964904785 sec.
+i:  167
+ 167: sum of 4 perfect squares: computed in 0.0001232624053955078 sec. Elapsed time: 2.716452121734619 sec.
+i:  188
+ 188: sum of 4 perfect squares: computed in 0.0003120899200439453 sec. Elapsed time: 2.7183754444122314 sec.
+Total elapsed time to compute sum of squares up to 1000: 2.8074076175689697 seconds
