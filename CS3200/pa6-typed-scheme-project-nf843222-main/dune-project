@@ -1,0 +1,25 @@
+(lang dune 3.1)
+
+(name pa6)
+
+(generate_opam_files true)
+
+(source
+ (github username/reponame))
+
+(authors "Your name here")
+
+(maintainers "Alex Bagnall")
+
+(license LICENSE)
+
+(documentation https://url/to/documentation)
+
+(package
+ (name pa6)
+ (synopsis "PA6")
+ (description "PA6")
+ (depends ocaml dune)
+ (tags (ohio university cs3200 pa6 ocaml)))
+
+; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project

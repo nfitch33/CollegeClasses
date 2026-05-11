@@ -1,0 +1,4 @@
+(executable
+ (public_name pa6)
+ (name main)
+ (libraries pa6))
