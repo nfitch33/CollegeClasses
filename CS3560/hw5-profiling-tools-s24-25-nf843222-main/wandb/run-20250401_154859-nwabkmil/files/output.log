@@ -1,0 +1,16 @@
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4999/4999 [02:11<00:00, 38.03it/s]
+   1: sum of inf perfect squares: dp_static computed in 2.384185791015625e-06 sec. Elapsed time: 3.911764144897461 sec.
+   1: sum of 1 perfect squares: dp computed in 1.9788742065429688e-05 sec. Elapsed time: 3.9120895862579346 sec.
+  37: sum of 2 perfect squares: dp computed in 3.981590270996094e-05 sec. Elapsed time: 3.918036460876465 sec.
+  67: sum of 3 perfect squares: dp computed in 0.00022220611572265625 sec. Elapsed time: 3.9239397048950195 sec.
+ 174: sum of 3 perfect squares: dp computed in 0.000522613525390625 sec. Elapsed time: 3.971477508544922 sec.
+ 249: sum of 3 perfect squares: dp computed in 0.0010657310485839844 sec. Elapsed time: 4.019014120101929 sec.
+ 319: sum of 4 perfect squares: dp computed in 0.002268552780151367 sec. Elapsed time: 4.094867467880249 sec.
+ 537: sum of 3 perfect squares: dp computed in 0.005294322967529297 sec. Elapsed time: 4.4747374057769775 sec.
+1141: sum of 3 perfect squares: dp computed in 0.01464080810546875 sec. Elapsed time: 7.248987436294556 sec.
+1786: sum of 3 perfect squares: dp computed in 0.03652048110961914 sec. Elapsed time: 13.933506727218628 sec.
+2516: sum of 2 perfect squares: dp computed in 0.03784489631652832 sec. Elapsed time: 27.87066149711609 sec.
+3459: sum of 3 perfect squares: dp computed in 0.04678940773010254 sec. Elapsed time: 55.747394323349 sec.
+3597: sum of 3 perfect squares: dp computed in 0.09448599815368652 sec. Elapsed time: 61.24793314933777 sec.
+4794: sum of 3 perfect squares: dp computed in 0.06553244590759277 sec. Elapsed time: 122.51043224334717 sec.
+Total elapsed time to compute sum of squares up to 5000: 135.3679964542389 seconds
