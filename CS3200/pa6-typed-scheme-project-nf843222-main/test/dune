@@ -1,0 +1,4 @@
+(test
+ (name pa6)
+ (modules pa6 llm_test llm_client)
+ (libraries pa6 alcotest qcheck qcheck-alcotest yojson str))
